@@ -35,8 +35,11 @@ public class JakartaEE9Resource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    /*
     public Response sendRecieveDemoData(Object o)
     {
         JSONObject jsonObject = new JSONObject(o);
+        return new ;
     }
+    */
 }
