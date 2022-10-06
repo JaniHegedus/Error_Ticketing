@@ -1,11 +1,10 @@
 package com.example.error_ticketing;
 
-import business.TOKEN;
+import business.Token;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.json.JSONObject;
-
 import java.util.Objects;
 
 @Path("jakartaee9")
@@ -14,7 +13,8 @@ public class JakartaEE9Resource {
     public Response ping(@HeaderParam("X-Auth-Token") String token)
     {
         JSONObject resp = new JSONObject();
-        if(token!=null && !token.equals("") &&!Objects.equals(new TOKEN().getTOKEN(), token))
+
+        if(token!=null && !token.equals("") &&!Objects.equals(new Token().getToken(), token))
         {
             return Response
                     .status(Response.Status.UNAUTHORIZED)
@@ -32,11 +32,9 @@ public class JakartaEE9Resource {
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }
-    /*
     public Response sendRecieveDemoData(Object o)
     {
         JSONObject jsonObject = new JSONObject(o);
-        return new ;
+        return null;
     }
-    */
 }
